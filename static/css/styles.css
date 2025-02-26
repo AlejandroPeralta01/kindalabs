@@ -1,0 +1,89 @@
+/* Estilos generales */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+  }
+  
+  /* Estilos para el título */
+  h1 {
+    color: #2c3e50;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #3498db;
+  }
+  
+  /* Estilos para el formulario de búsqueda */
+  form {
+    margin: 15px 0 25px 0;
+    padding: 10px 0;
+  }
+  
+  /* Estilos para la etiqueta "Buscar por película" */
+  label {
+    font-weight: 600;
+    margin-right: 10px;
+    color: #34495e;
+  }
+  
+  /* Estilos para el campo de entrada */
+  input[type="text"] {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 250px;
+    transition: border-color 0.3s;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+  }
+  
+  /* Estilos para el botón de búsqueda */
+  button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 15px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Estilos para mensajes */
+  p {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-left: 5px solid #3498db;
+    color: #2c3e50;
+    font-size: 16px;
+  }
+  
+  /* Estilos para el contenedor del mapa */
+  div {
+    margin-top: 20px;
+  }
+
+  
+  /* Estilos responsivos para pantallas pequeñas */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+    
+    input[type="text"] {
+      width: 180px;
+    }
+  }

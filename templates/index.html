@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Filmaciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Mapa de Filmaciones en San Francisco</h1>
+    
+    <form method="POST">
+        <label for="movie">Buscar por película:</label>
+        <input type="text" name="movie" id="movie" value="{{ movie_name }}">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <div>
+        {% if message %}
+            <p>{{ message }}</p>
+        {% else %}
+            {{ mapa_html|safe }}
+        {% endif %}
+    </div>
+</body>
+</html>
