@@ -1,3 +1,4 @@
 pandas
 flask
 folium
+python-dotenv
