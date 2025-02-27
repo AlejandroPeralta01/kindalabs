@@ -1,6 +1,6 @@
 # Mapa de filmaciones de San Francisco
 
-Este proyecto incluye un entorno virtual para la gestión de dependencias de Python y permite instalar todos los requisitos necesarios desde un archivo `requirements.txt`.
+En este proyecto realicé un servicio web que muestra en un mapa los lugares donde se han filmado películas en San Francisco. 
 
 ## Requisitos Previos
 
