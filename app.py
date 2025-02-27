@@ -2,9 +2,7 @@ import pandas as pd
 from flask import Flask, request ,render_template
 import folium
 
-# Iniciamos la aplicación
 app = Flask(__name__)
-
 
 url = "https://data.sfgov.org/resource/yitu-d5am.csv"
 coords = (37.7749, -122.4194) # coordenadas del centro de San Francisco, según google :)
@@ -31,7 +29,7 @@ def create_map(filtered_df : pd.DataFrame) -> tuple:
         HTML del mapa
     """
 
-    mapa = folium.Map(location=coords, zoom_start=zoom, width="50%",height="50%")
+    mapa = folium.Map(location=coords, zoom_start=zoom)
 
     mapa_html = None
 
@@ -41,7 +39,7 @@ def create_map(filtered_df : pd.DataFrame) -> tuple:
 
             latitude , longitude = float(row['latitude']) , float(row['longitude'])
 
-            popup_text = f"{row['title']} ({row.get('release_year','Desconocido')}) -- {row['locations']}"
+            popup_text = f"{row['title']} ({row.get('release_year','Desconocido')}) - {row['locations']}"
 
             folium.Marker([latitude, longitude],popup=popup_text,tooltip=row['title']).add_to(mapa)
         
@@ -54,8 +52,13 @@ movies_df= load_data()
 
 @app.route('/', methods=['GET', 'POST'])
 
-def index():
+def index() -> str:
+    """
+    Renderiza la páguina principal con un mapa de ubicaciones de película
 
+    Returns:
+        str: Página HTML renderizada y posible mensaje de error
+    """
     movie_name = request.form.get('movie','')
 
     message = None

@@ -15,12 +15,13 @@
         <button type="submit">Buscar</button>
     </form>
     
-    <div>
-        {% if message %}
+    {% if message %}
             <p>{{ message }}</p>
-        {% else %}
+    {% else %}
+        <div class="map_container">
             {{ mapa_html|safe }}
-        {% endif %}
-    </div>
+        </div>
+    {% endif %}
+    
 </body>
 </html>
